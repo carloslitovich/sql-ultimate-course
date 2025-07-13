@@ -1,0 +1,17 @@
+/*
+
+Notes from SQL Full Course 30 hr
+
+*/
+
+
+--View data (top 1000 rows)
+SELECT TOP (1000) [id] 
+, [first_name]
+, [country]
+, [score]
+ FROM [MyDatabase].[dbo].[MyTable];
+
+ --Alternatively, you can ask for all columns
+
+ SELECT TOP (1000) * FROM [MyDatabase].[dbo].[MyTable];
