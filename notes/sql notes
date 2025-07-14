@@ -4,7 +4,11 @@ Notes from SQL Full Course 30 hr
 
 */
 
+--CHAPTER 1: Introduction to SQL
 
+--SQL (Structured Query Language) is a standard language for managing and manipulating databases.
+--SQL is used to perform tasks such as querying data, updating records, and managing database structures.
+--SQL is used in various database management systems (DBMS) like MySQL, PostgreSQL, SQL Server, and Oracle.
 --View data (top 1000 rows)
 SELECT TOP (1000) [id] 
 , [first_name]
@@ -15,3 +19,89 @@ SELECT TOP (1000) [id]
  --Alternatively, you can ask for all columns
 
  SELECT TOP (1000) * FROM [MyDatabase].[dbo].[MyTable];
+
+ /* 
+
+ There are two ways to import a database into SQL Server:
+  1. Using the Import Data Wizard in SQL Server Management Studio (SSMS).
+  2. Using the BULK INSERT command in a SQL script.
+  
+  ...from the couse:
+
+  1. Write in a database through the SQL program.  
+    2. Use a .bak file to restore a database, using SQL Server's restore function.
+  
+  */
+
+
+--CHAPTER 2: Basic SQL Queries
+
+--SELECT statement is used to retrieve data from a database.
+
+--Each SQL query consists of clauses:
+/* SQL Clauses 
+
+1. SELECT: Specifies the columns to retrieve.
+
+2. FROM: Specifies the table to retrieve data from.
+
+--The FROM clause executes first, then the SELECT clause.
+
+-- It is important to select the right database before running queries. You can do this by using the USE statement:
+USE MyDatabase;
+
+3. WHERE: Filters records based on a condition.
+
+-- Code is not case-sensitive, so WHERE and where are equivalent.
+-- Not equal to 0 is written as <> or != in SQL.
+
+
+4. GROUP BY: Groups rows that have the same values in specified columns.
+
+
+5. ORDER BY: Sorts the result set by one or more columns.
+--NOTE THE NEED TO SPECIFY AGGREGATED COLUMNS IN THE SELECT CLAUSE WHEN USING GROUP BY.
+
+6. HAVING: Filters groups based on a condition. (Filter aggregated data; filter after GROUP BY)
+
+7. DISTINCT: Removes duplicate rows from the result set.
+
+8. TOP: Limits the number of rows returned by a query (syntax varies by DBMS).
+
+
+
+
+7. JOIN: Combines rows from two or more tables based on a related column.
+8. UNION: Combines the result sets of two or more SELECT statements.
+9. INSERT: Adds new rows to a table.
+10. UPDATE: Modifies existing rows in a table.
+11. DELETE: Removes rows from a table.
+12. CREATE: Creates a new table or database.
+13. ALTER: Modifies an existing table structure.
+14. DROP: Deletes a table or database.
+15. TRUNCATE: Removes all rows from a table without logging individual row deletions.
+16. INDEX: Creates an index on a table to improve query performance.
+17. VIEW: Creates a virtual table based on a SELECT query.
+18. PROCEDURE: Defines a stored procedure for reusable SQL code.
+19. FUNCTION: Defines a user-defined function for reusable SQL code.
+20. TRANSACTION: Groups a set of SQL statements into a single unit of work.
+21. COMMIT: Saves changes made in a transaction.
+22. ROLLBACK: Undoes changes made in a transaction.
+23. GRANT: Gives permissions to users or roles.
+24. REVOKE: Removes permissions from users or roles.
+25. SET: Changes the value of a system variable or session setting.
+26. EXECUTE: Runs a stored procedure or function.
+27. WITH: Defines a Common Table Expression (CTE) for temporary result sets.
+28. CASE: Implements conditional logic in SQL queries.
+29. COALESCE: Returns the first non-null value in a list of expressions.
+30. CAST/CONVERT: Converts data from one type to another.
+31. EXISTS: Checks for the existence of rows in a subquery.
+32. IN: Checks if a value exists in a list or subquery.
+33. LIKE: Searches for a specified pattern in a column.
+34. IS NULL/IS NOT NULL: Checks for null values in a column.
+
+36. LIMIT/OFFSET: Limits the number of rows returned by a query (syntax varies by DBMS).
+37. FETCH NEXT: Retrieves a specified number of rows from the result set (syntax varies by DBMS).
+38. ROW_NUMBER: Assigns a unique sequential integer to rows within a result set.
+39. RANK/DENSE_RANK: Assigns a rank to each row within a result set based on a specified order.
+40. PARTITION BY: Divides the result
